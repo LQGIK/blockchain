@@ -1,5 +1,9 @@
 LQGIK's Simple Blockchain CryptoCurrency Demo
 
+Requirements:
+    crypto-js
+    elliptic
+
 
 Questions:
 
@@ -8,7 +12,7 @@ How is it tamper proof?
     I)  What if I were to change a specific block's transaction amount to benefit myself or another?
             lqgikCoin.chain[1].pendingTransactions[1].amount = 200;
 
-        When the new block is introduced into the system, it will run the method isChainValid() 
+        When the new block is introduced into the system, it will run the method isChainValid()
         isChainValid() creates a hash using the same method as the block was initially made with
         and checks whether the new hash and the old one are the same. Since the amount is used as
         a parameter in creating the hash, the new hash will obviously change and therefore we can
@@ -28,7 +32,7 @@ How is it tamper proof?
     IV) What if I were to recalculate all the blocks' hashes so that every hash matches?
 
         This is where proof-of-work comes in! It statistically takes 10min to make a block with EVERY MINER in the P2P network attempting to create a sufficient hash.
-        It will simply take forever to recalculate every block's hash within the time it takes to update the chain. 
+        It will simply take forever to recalculate every block's hash within the time it takes to update the chain.
         Bitcoin has value because of the power and time it takes to make a block.
 
     V) What if I were to create my own blockchain and upload it?
@@ -41,5 +45,5 @@ How is it tamper proof?
 
 How do pendingTransactions work?
     Whenever a block is made, all transactions are added to it and successfully uploaded into that block.
-    It is not necessary to have one transaction per block. If there was one transaction per block, then the 
+    It is not necessary to have one transaction per block. If there was one transaction per block, then the
     entire system would be extremely slow as it cannot mine as quick as it takes transactions.
